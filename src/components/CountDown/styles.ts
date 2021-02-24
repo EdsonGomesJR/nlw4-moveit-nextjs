@@ -63,7 +63,7 @@ export const CountDownButton = styled.button<ButtonProps>`
 
   :hover:not(:disabled) {
     background: var(--blue-dark) 
-  }
+  } 
 
   :disabled{
     background: var(--white);
