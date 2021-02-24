@@ -1,15 +1,14 @@
-
-
-import { useState } from 'react';
-import { CompletedChallengesContainer } from './styles';
+import { useContext, useState } from "react";
+import { ChallengesContext } from "../../contexts/ChallengesContext";
+import { CompletedChallengesContainer } from "./styles";
 
 export function CompletedChallenges() {
-
+  const { challengesCompleted } = useContext(ChallengesContext);
 
   return (
     <CompletedChallengesContainer>
       <span>Desafios completos</span>
-      <span>5</span>
+      <span>{challengesCompleted}</span>
     </CompletedChallengesContainer>
   );
 }

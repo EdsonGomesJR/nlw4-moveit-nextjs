@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const CountDownContainer = styled.div`
 
@@ -38,7 +38,12 @@ color: var(--title);
 
 `;
 
-export const CountDownButton = styled.button`
+interface ButtonProps {
+  isCountingDown?: boolean;
+}
+
+
+export const CountDownButton = styled.button<ButtonProps>`
   width: 100%;
   height: 5rem;
   margin-top: 2rem;
@@ -56,7 +61,29 @@ export const CountDownButton = styled.button`
 
   transition: background-color 0.2s;
 
-  :hover {
+  :hover:not(:disabled) {
     background: var(--blue-dark) 
   }
+
+  :disabled{
+    background: var(--white);
+    color:var(--text);
+    cursor: not-allowed;
+  }
+
+  
+
+  ${props => props.isCountingDown &&
+  css`
+     background: var(--white);
+     color: var(--text);
+     transition: background-color 0.2s;
+
+     :hover:not(:disabled){
+       color: var(--white);
+       background: var(--red);
+     }
+  `}
+
+ 
 `;
