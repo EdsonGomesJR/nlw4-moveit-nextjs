@@ -69,6 +69,14 @@ export const CountDownButton = styled.button<ButtonProps>`
     background: var(--white);
     color:var(--text);
     cursor: not-allowed;
+    border-bottom: 4px solid var(--green);
+    svg{
+      width: 1.11rem;
+      height: 1.11rem;
+      margin-left: 1rem;
+      color: var(--green);
+    
+    }
   }
 
   

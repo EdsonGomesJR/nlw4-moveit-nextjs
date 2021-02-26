@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { ChallengesContext } from "../../contexts/ChallengesContext";
+import { CountDownContext } from "../../contexts/CountDownContext";
+import { LevelUpPopUp } from "../LevelUpPopUp";
+
 import {
   ChallengeBoxContainer,
   ChallengeActive,
@@ -9,7 +12,20 @@ import {
 } from "./styles";
 
 export function ChallengeBox() {
-  const { activeChallenge, resetChallenge } = useContext(ChallengesContext);
+  const { activeChallenge, resetChallenge, completeChallenge } = useContext(
+    ChallengesContext
+  );
+  const { resetCountDown } = useContext(CountDownContext);
+
+  function handleChallengeSucceeded() {
+    completeChallenge();
+    resetCountDown();
+  }
+
+  function handleChallengeFailed() {
+    resetChallenge();
+    resetCountDown();
+  }
 
   return (
     <ChallengeBoxContainer>
@@ -23,10 +39,16 @@ export function ChallengeBox() {
           </main>
 
           <footer>
-            <ChallengeFailedButton type="button" onClick={resetChallenge}>
+            <ChallengeFailedButton
+              type="button"
+              onClick={handleChallengeFailed}
+            >
               Falhei
             </ChallengeFailedButton>
-            <ChallengeSucceededButton type="button">
+            <ChallengeSucceededButton
+              type="button"
+              onClick={handleChallengeSucceeded}
+            >
               Completei
             </ChallengeSucceededButton>
           </footer>
