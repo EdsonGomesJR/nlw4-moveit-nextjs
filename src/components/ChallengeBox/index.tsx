@@ -9,6 +9,7 @@ import {
   ChallengeNotActive,
   ChallengeFailedButton,
   ChallengeSucceededButton,
+  Footer,
 } from "./styles";
 
 export function ChallengeBox() {
@@ -31,14 +32,16 @@ export function ChallengeBox() {
     <ChallengeBoxContainer>
       {activeChallenge ? (
         <ChallengeActive>
-          <header>Ganhe {activeChallenge.amount}xp</header>
-          <main>
-            <img src={`icons/${activeChallenge.type}.svg`} />
-            <strong>Novo desafio</strong>
-            <p>{activeChallenge.description}</p>
-          </main>
+          <div>
+            <header>Ganhe {activeChallenge.amount}xp</header>
+            <main>
+              <img src={`icons/${activeChallenge.type}.svg`} />
+              <strong>Novo desafio</strong>
+              <p>{activeChallenge.description}</p>
+            </main>
+          </div>
 
-          <footer>
+          <Footer>
             <ChallengeFailedButton
               type="button"
               onClick={handleChallengeFailed}
@@ -51,7 +54,7 @@ export function ChallengeBox() {
             >
               Completei
             </ChallengeSucceededButton>
-          </footer>
+          </Footer>
         </ChallengeActive>
       ) : (
         <ChallengeNotActive>

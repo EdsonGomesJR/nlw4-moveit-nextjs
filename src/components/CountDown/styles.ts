@@ -53,6 +53,7 @@ export const CountDownButton = styled.button<ButtonProps>`
   justify-content: center;
   border: 0;
   border-radius: 5px;
+  outline: 0;
 
   background: var(--blue);
   color: var(--white);
@@ -60,9 +61,17 @@ export const CountDownButton = styled.button<ButtonProps>`
   font-weight: 600;
 
   transition: background-color 0.2s;
+    svg {
+      width: 1.11rem;
+      height: 1.11rem;
+      margin-left: 1rem;
+      
+    }
 
   :hover:not(:disabled) {
     background: var(--blue-dark) 
+
+    
   } 
 
   :disabled{
@@ -70,6 +79,8 @@ export const CountDownButton = styled.button<ButtonProps>`
     color:var(--text);
     cursor: not-allowed;
     border-bottom: 4px solid var(--green);
+
+  
     svg{
       width: 1.11rem;
       height: 1.11rem;
@@ -77,6 +88,9 @@ export const CountDownButton = styled.button<ButtonProps>`
       color: var(--green);
     
     }
+    
+
+  
   }
 
   
@@ -94,4 +108,19 @@ export const CountDownButton = styled.button<ButtonProps>`
   `}
 
  
+`;
+
+export const Border = styled.div`
+
+    width: 100%;
+    position: relative;
+    bottom: 3px;
+    height: 5px;
+    border-radius: 0px 0px 5px 5px;
+    background: var(--gray-line);
+
+    > div {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--green);}
 `;

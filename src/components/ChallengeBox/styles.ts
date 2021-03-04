@@ -1,4 +1,4 @@
-import { type } from 'os';
+
 import styled from 'styled-components';
 
 export const ChallengeBoxContainer = styled.div`
@@ -6,13 +6,12 @@ height: 100%;
 background: var(--white);
 border-radius: 5px;
 box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-padding: 1.5rem 2rem;
+
 
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-
 text-align: center;
 `;
 export const ChallengeActive = styled.div`
@@ -20,6 +19,8 @@ height: 100%;
 display: flex;
 flex-direction: column;
 
+div{
+  padding: 1.5rem 2rem;
 header {
   color: var(--blue);
   font-weight: 600;
@@ -29,6 +30,7 @@ header {
 }
 
 main {
+  padding: 1.5rem 2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -46,40 +48,48 @@ main {
     line-height: 1.5;
   }
 }
-
-footer{
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap: 1rem;
-
-button {
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 0;
-  border-radius: 5px;
-
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 600;
-  transition: filter 0.2s;
-
-  :hover{
-    filter: brightness(0.9);
-  }
-
 }
-}
- 
 
 
 `;
+
+export const Footer = styled.footer`
+display:grid;
+grid-template-columns: 1fr 1fr;
+align-items: flex-end;
+margin-top: 56px;
+border-top: 1px solid #DCDDE0;
+
+
+
+
+button {
+  height: 5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  /* transition: filter 0.2s; */
+  transition: background-color 0.2s;
+
+  /* faz um escurecimento no hover esse filter :hover{
+    filter: brightness(0.9);
+  } */
+
+}
+
+button + button {
+  border-left: 1px solid #DCDDE0;
+}
+
+`;
+
+
 export const ChallengeNotActive = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+
 
 strong { 
   font-size: 1.5rem;
@@ -102,8 +112,28 @@ p {
 `;
 
 export const ChallengeSucceededButton = styled.button`
-background: var(--green);
+background: #F7FFF5;
+color: var(--green);
+border: 0;
+border-radius: 0px 0px 5px 0px;
+&:hover{
+  background: var(--green);
+  color: var(--white);
+}
 `;
 export const ChallengeFailedButton = styled.button`
-background: var(--red);
+color: var(--red);
+background: #FFF5F5;
+border: 0;
+border-radius: 0px 0px 0px 5px;
+
+
+&:hover{
+  background: var(--red);
+  color: var(--white);
+}
+
+
+
+
 `;

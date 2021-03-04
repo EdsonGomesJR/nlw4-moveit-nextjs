@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { CountDownContext } from "../../contexts/CountDownContext";
-import { CountDownContainer, CountDownButton } from "./styles";
-import { FaCheckCircle } from "react-icons/fa";
+import { CountDownContainer, CountDownButton, Border } from "./styles";
+import { FaCheckCircle, FaPlay, FaTimes } from "react-icons/fa";
 
 export function CountDown() {
   const {
@@ -11,10 +11,15 @@ export function CountDown() {
     isActive,
     startCountDown,
     resetCountDown,
+    time,
+    fullTime,
   } = useContext(CountDownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
+
+  const progressBorder = Math.round(time * 100) / fullTime;
+  console.log(progressBorder);
 
   return (
     <div>
@@ -37,16 +42,23 @@ export function CountDown() {
       ) : (
         <>
           {isActive ? (
-            <CountDownButton
-              type="button"
-              onClick={resetCountDown}
-              isCountingDown={isActive}
-            >
-              Abandonar ciclo
-            </CountDownButton>
+            <>
+              <CountDownButton
+                type="button"
+                onClick={resetCountDown}
+                isCountingDown={isActive}
+              >
+                Abandonar ciclo
+                <FaTimes />
+              </CountDownButton>
+              <Border>
+                <div style={{ width: `${100 - progressBorder}%` }}></div>
+              </Border>
+            </>
           ) : (
             <CountDownButton type="button" onClick={startCountDown}>
               Iniciar um ciclo
+              <FaPlay />
             </CountDownButton>
           )}
         </>

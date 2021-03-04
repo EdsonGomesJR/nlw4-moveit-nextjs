@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .container {
@@ -18,7 +19,6 @@
   padding: 2rem 3rem;
   border-radius: 5px;
   box-shadow: 0 0 60 rgba(0, 0, 0, 0.05);
-
   text-align: center;
   position: relative;
 }
@@ -28,7 +28,7 @@
   font-weight: 600;
   color: var(--blue);
   background: url("/icons/levelup.svg") no-repeat center;
-  background-size: contain;
+  background-size: 320px 120px;
   text-shadow: 0px 8px 8px var(--text-highlight);
 }
 
@@ -50,4 +50,27 @@
   border: 0;
   /* /* quando o button tiver só um icone, coloca o font-size como 0* */
   font-size: 0px;
+}
+
+.overlay footer {
+  width: 400px;
+}
+
+.overlay footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  cursor: pointer;
+  width: 100%;
+  border-top: 1px solid #dcdde0;
+  color: #2aa9e0;
+  font-weight: 600;
+  background: #f5fcff;
+  box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
+  border-radius: 0px 0px 5px 5px;
+}
+
+.overlay footer a svg {
+  margin-left: 0.5rem;
 }
