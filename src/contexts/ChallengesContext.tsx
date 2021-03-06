@@ -59,10 +59,19 @@ export function ChallengesProvider({
     Notification.requestPermission();
   }, []);
 
+  const user = JSON.stringify({
+    level: level,
+    xp: currentExperience,
+    total: challengesCompleted,
+  });
+
   useEffect(() => {
     Cookies.set("level", String(level));
     Cookies.set("currentExperience", String(currentExperience));
     Cookies.set("challengesCompleted", String(challengesCompleted));
+    Cookies.set("user", user);
+    const userData = Cookies.getJSON("user");
+    console.log("vem do user data :" + userData.xp);
   }, [level, currentExperience, challengesCompleted]);
 
   function levelUp() {

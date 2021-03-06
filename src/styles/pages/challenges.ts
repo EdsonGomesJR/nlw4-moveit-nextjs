@@ -1,3 +1,5 @@
+
+import React from "react";
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -14,11 +16,7 @@ flex: 1;
 display: grid;
 grid-template-columns: 1fr 1fr;
 
-
-
-
 `;
-
 export const HeroImage = styled.div`
 
 display: flex;
@@ -28,9 +26,6 @@ img{
 
   max-width: 90%;
   max-height: 90%;
-
-
-
 
 
 }

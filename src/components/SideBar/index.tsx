@@ -15,7 +15,7 @@ export function SideBar({
   const routes = useRouter();
 
   function handleNavigateToChallenges(event) {
-    routes.push("/");
+    routes.push("/challenges");
   }
   function handleNavigateToLeaderBoardPage(event) {
     routes.push("/leaderboard");

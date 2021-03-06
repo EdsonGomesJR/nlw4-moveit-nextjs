@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
 import React from "react";
 import { Card } from "../../components/Card";
 import { SideBar } from "../../components/SideBar";
-import { Container, CardHeader } from "./styles";
+import { Container, CardHeader } from "../../styles/pages/leaderbord";
+
 export default function Leaderboard() {
   return (
     <div>

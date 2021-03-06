@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { CountDownContext } from "../../contexts/CountDownContext";
 import { CountDownContainer, CountDownButton, Border } from "./styles";
 import { FaCheckCircle, FaPlay, FaTimes } from "react-icons/fa";
@@ -19,7 +19,6 @@ export function CountDown() {
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
 
   const progressBorder = Math.round(time * 100) / fullTime;
-  console.log(progressBorder);
 
   return (
     <div>

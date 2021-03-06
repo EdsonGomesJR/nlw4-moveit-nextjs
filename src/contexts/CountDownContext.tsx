@@ -29,12 +29,12 @@ export const CountDownContext = createContext({} as CountDownContextData);
 export function CountDownProvider({ children }: CountDownProviderProps) {
   const { startNewChallenge } = useContext(ChallengesContext);
 
-  const [time, setTime] = useState(1 * 60);
+  const [time, setTime] = useState(0.1 * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
-  const fullTime = 1 * 60;
+  const fullTime = 0.1 * 60;
 
   function startCountDown() {
     setIsActive(true);
@@ -43,7 +43,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
   function resetCountDown() {
     clearTimeout(countDownTimeout);
     setIsActive(false);
-    setTime(1 * 60);
+    setTime(0.1 * 60);
 
     setHasFinished(false);
   }
