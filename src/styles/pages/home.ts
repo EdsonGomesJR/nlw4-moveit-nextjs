@@ -1,5 +1,5 @@
 
-import React from "react";
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -9,12 +9,43 @@ height: 100vh;
 background: var(--blue);
 display: flex;
 
+@media screen and (max-width: 1024px) {
+ display: flex;
+align-items: center;
+justify-content:center;
+
+
+  }
+
+
+
 `;
 
 export const Content = styled.div`
+
+
 flex: 1;
 display: grid;
 grid-template-columns: 1fr 1fr;
+
+
+
+
+@media screen and (max-width: 1024px) {
+display: flex;
+flex-direction: column;
+margin: 10px;
+}
+
+@media screen and (min-width: 320px){
+
+  width: 100%;
+    display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+
 
 `;
 export const HeroImage = styled.div`
@@ -28,6 +59,10 @@ img{
   max-height: 90%;
 
 
+}
+
+@media screen and (max-width: 1024px) {
+display: none;
 }
 
 `;
@@ -50,7 +85,6 @@ strong{
   font-size: 2.25rem;
   color: var(--white);
   font-weight: 600;
-
   margin-bottom: 1.5rem;
 
 }
@@ -120,6 +154,48 @@ button{
 
   }
 }
+}
+
+@media screen and (max-width: 1024px) {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-left:0;
+}
+
+@media screen and (min-width: 320px){
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  svg {
+    width: 90%;
+  
+  }
+
+  strong {
+    margin-top: 4rem;
+
+  }
+
+  div {
+  display: flex;
+  width: 85%;
+  margin-bottom: 2.5rem;
+
+}
+ form { 
+   margin-top: 2rem;
+   width: 85%;
+
+  input {
+    width: 90%;
+  }
+
+ 
+ }
+
+
+  
 }
 
 

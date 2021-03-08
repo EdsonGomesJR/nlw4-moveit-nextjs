@@ -19,4 +19,8 @@ span:last-child {
   font-size: 1.5rem;
 }
 
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  margin-bottom: 1rem;
+}
+
 `;

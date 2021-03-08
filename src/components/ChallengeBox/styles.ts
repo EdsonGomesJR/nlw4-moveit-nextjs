@@ -13,6 +13,9 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+
+}
 `;
 export const ChallengeActive = styled.div`
 height: 100%;
@@ -82,6 +85,10 @@ button + button {
   border-left: 1px solid #DCDDE0;
 }
 
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+  margin-top: 0;
+}
+
 `;
 
 
@@ -89,6 +96,7 @@ export const ChallengeNotActive = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+
 
 
 strong { 
@@ -109,6 +117,13 @@ p {
     margin-bottom: 1rem;
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {}
+   padding: 0.5rem;
+
+   p {
+     margin-top: 0.5rem;
+   }
 `;
 
 export const ChallengeSucceededButton = styled.button`

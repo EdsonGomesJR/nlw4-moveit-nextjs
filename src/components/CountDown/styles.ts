@@ -8,6 +8,7 @@ font-family: Rajdhani;
 font-weight: 600;
 color: var(--title); 
 
+
 > div {
   flex: 1;
   display: flex;
@@ -19,6 +20,10 @@ color: var(--title);
   border-radius: 5px;
   font-size: 8.5rem;
   text-align: center;
+  @media screen and (min-width: 320px) and (max-width: 1200px) {
+     font-size: 6rem;
+
+   }
 
   span {
     flex: 1;
@@ -33,6 +38,10 @@ color: var(--title);
  > span {
    font-size: 6.25rem;
    margin: 0 0.5rem;
+   @media screen and (min-width: 320px) and (max-width: 1200px) {
+     font-size: 3.12rem;
+     margin: 0 0.1rem;
+   }
  }
 
 
@@ -107,6 +116,9 @@ export const CountDownButton = styled.button<ButtonProps>`
      }
   `}
 
+  @media screen and (min-width: 320px) and (max-width: 1200px) {
+    margin-bottom: 1rem;
+  }
  
 `;
 

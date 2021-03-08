@@ -3,7 +3,7 @@
 import styled, {css} from 'styled-components';
 
 export const AppSideBar = styled.aside`
-  position: absolute;
+  position: fixed;
   height: 100%;
   padding-top: 2rem;
   background: var(--white);
@@ -11,34 +11,25 @@ export const AppSideBar = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
-   img {
+     img {
   width: 48px;
 }
 
-footer a,
- footer button {
-  width: 48px;
-  height: 48px;
+@media screen and (min-width: 320px) and (max-width: 1200px){
+position: relative;
+height: auto;
+display: flex;
+flex-direction: row;
+justify-content:space-between;
+align-items: center;
+padding-left: 2rem;
+padding-top: 0;
 
-  border: 0;
 
-  background: #12afcb;
-  border-radius: 16px;
 
-  cursor: pointer;
-
-  transition: background-color 0.2s;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
- footer a:hover,
- footer button:hover {
-  background: #17d6eb;
-}
+
 
 `;
 export const MidIcons = styled.div`
@@ -48,6 +39,15 @@ flex-direction: column;
 margin-bottom: 70px;
 align-items: center;
 justify-content: center;
+
+@media screen and (min-width: 320px) and (max-width: 1200px){
+flex-direction: row;
+margin-bottom: 0;
+width: 70%;
+
+
+}
+
 
 `;
 
@@ -64,12 +64,48 @@ background: transparent;
 height: 56px;
 outline: 0;
 margin-bottom: 10px;
+margin-right: 1rem;
 
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+width: 30%;
+border: 0;
+margin-bottom:0;
+border-radius: 0;
+
+
+${props => props.isChallengePage && css`
+    padding-top: 4px;
+    border-bottom: 4px solid var(--blue);
+   
+    svg{
+       color: var(--blue);
+    }
+
+`}
+
+${props => props.isLeaderBordPage && css`
+    padding-top: 4px;
+    border-bottom: 4px solid var(--blue);
+    svg{
+       color: var(--blue);
+    }
+
+`}
+
+}
  &:hover{
     padding-right: 4px;
     border-left: 4px solid var(--blue);
     border-radius: 0px 5px 5px 0px;
     
+    @media screen and (min-width: 320px) and (max-width: 1200px) {
+    border-left: 0;
+ 
+    border-bottom: 4px solid var(--blue);
+    border-radius: 0;
+
+
+    }
  
   }
  svg {
@@ -78,7 +114,7 @@ margin-bottom: 10px;
   color: var(--text);
 
 
-&:hover{
+ &:hover{
  
   color: var(--blue);
 

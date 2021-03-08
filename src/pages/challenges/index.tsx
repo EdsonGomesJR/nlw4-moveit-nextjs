@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { GetServerSideProps } from "next";
-import styles from "../../styles/pages/Home.module.css";
+import styles from "../../styles/pages/Challenges.module.css";
 import { ChallengeBox } from "../../components/ChallengeBox";
 import { CountDownProvider } from "../../contexts/CountDownContext";
 import { ChallengesProvider } from "../../contexts/ChallengesContext";
@@ -43,11 +43,10 @@ export default function ChallengesPage(props: HomeProps) {
         <ExperienceBar />
 
         <CountDownProvider>
+          <Profile />
+          <CompletedChallenges />
           <section>
             <div>
-              <Profile />
-
-              <CompletedChallenges />
               <CountDown />
             </div>
             <div>

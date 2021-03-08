@@ -7,7 +7,7 @@ import {
   Content,
   HeroImage,
   LoginContainer,
-} from "../styles/pages/challenges";
+} from "../styles/pages/home";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
